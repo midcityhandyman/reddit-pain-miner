@@ -1,0 +1,325 @@
+{
+  "topic": "invoicing software",
+  "note": "Synthetic recording. All text is invented.",
+  "posts": {
+    "data": [
+      {
+        "id": "p001",
+        "subreddit": "smallbiz_sample",
+        "title": "Chasing late payments is eating my week",
+        "selftext": "I run a two person shop. I hate chasing late payments by hand every Friday. Payment reminders have to be sent manually for each overdue invoice and it takes forever. Anyone found something better?",
+        "author": "sample_user_01",
+        "score": 212,
+        "created_utc": 1790000000
+      },
+      {
+        "id": "p002",
+        "subreddit": "smallbiz_sample",
+        "title": "Bank sync keeps breaking",
+        "selftext": "The bank sync in my invoicing software is broken again. It fails every few days and I have to reconnect the bank feed. Last month the sync created duplicate transactions and I spent a weekend cleaning them up.",
+        "author": "sample_user_07",
+        "score": 154,
+        "created_utc": 1790086400
+      },
+      {
+        "id": "p003",
+        "subreddit": "smallbiz_sample",
+        "title": "They raised the price again",
+        "selftext": "My plan was 15 a month two years ago. They raised the price again and now charge per user. It is too expensive for a tiny team, and the price hike came with no new features.",
+        "author": "sample_user_12",
+        "score": 301,
+        "created_utc": 1790172800
+      },
+      {
+        "id": "p004",
+        "subreddit": "smallbiz_sample",
+        "title": "Mobile app crashes when I scan receipts",
+        "selftext": "The mobile app crashes every time I scan a receipt on site. I lose the photo and have to scan the receipt again. Really frustrating when I am standing in a parking lot.",
+        "author": "sample_user_16",
+        "score": 97,
+        "created_utc": 1790259200
+      },
+      {
+        "id": "p005",
+        "subreddit": "smallbiz_sample",
+        "title": "Recurring invoices are too rigid",
+        "selftext": "I bill retainers monthly. There is no way to edit one recurring invoice without changing the whole series. I wish recurring invoices let me adjust a single month.",
+        "author": "sample_user_19",
+        "score": 76,
+        "created_utc": 1790345600
+      },
+      {
+        "id": "p006",
+        "subreddit": "smallbiz_sample",
+        "title": "Support took nine days to answer",
+        "selftext": "I opened a ticket about a wrong tax total. Support took nine days to reply and the answer was a link to the help page. I am still waiting for a real fix.",
+        "author": "sample_user_22",
+        "score": 58,
+        "created_utc": 1790432000
+      },
+      {
+        "id": "p007",
+        "subreddit": "smallbiz_sample",
+        "title": "What do you dislike most about your invoicing software?",
+        "selftext": "Curious what bothers people day to day. For me the bank sync fails about once a week and I am sick of reconnecting the bank feed.",
+        "author": "sample_user_24",
+        "score": 133,
+        "created_utc": 1790518400
+      }
+    ]
+  },
+  "comments": {
+    "p001": {
+      "data": [
+        {
+          "id": "c00101",
+          "link_id": "p001",
+          "body": "Same here. Sending payment reminders manually is so tedious, I waste hours every month on overdue invoices.",
+          "author": "sample_user_02",
+          "score": 88
+        },
+        {
+          "id": "c00102",
+          "link_id": "p001",
+          "body": "Why can't the reminders for overdue invoices just go out on a schedule? I am tired of chasing late payments.",
+          "author": "sample_user_03",
+          "score": 41
+        },
+        {
+          "id": "c00103",
+          "link_id": "p001",
+          "body": "We set up a spreadsheet and it works fine for us. No complaints so far.",
+          "author": "sample_user_04",
+          "score": 12
+        },
+        {
+          "id": "c00104",
+          "link_id": "p001",
+          "body": "> Payment reminders have to be sent manually\nI wish there was a way to escalate overdue reminders after 30 days, chasing clients by hand is painful.",
+          "author": "sample_user_05",
+          "score": 30
+        },
+        {
+          "id": "c00105",
+          "link_id": "p001",
+          "body": "How many clients do you have?",
+          "author": "sample_user_06",
+          "score": 5
+        }
+      ]
+    },
+    "p002": {
+      "data": [
+        {
+          "id": "c00201",
+          "link_id": "p002",
+          "body": "The bank feed sync is so buggy. Duplicate transactions every single week and reconciliation is a nightmare.",
+          "author": "sample_user_08",
+          "score": 67
+        },
+        {
+          "id": "c00202",
+          "link_id": "p002",
+          "body": "Our bank sync stopped working after the last update and the bank connection still fails.",
+          "author": "sample_user_02",
+          "score": 25
+        },
+        {
+          "id": "c00203",
+          "link_id": "p002",
+          "body": "I gave up and import bank statements manually now, which is tedious but at least there are no duplicate transactions.",
+          "author": "sample_user_09",
+          "score": 19
+        },
+        {
+          "id": "c00204",
+          "link_id": "p002",
+          "body": "Which bank are you with? Ours has been stable.",
+          "author": "sample_user_10",
+          "score": 8
+        },
+        {
+          "id": "c00205",
+          "link_id": "p002",
+          "body": "Frustrating that a broken bank sync is treated as normal, the feed fails and nobody tells you.",
+          "author": "sample_user_11",
+          "score": 33
+        }
+      ]
+    },
+    "p003": {
+      "data": [
+        {
+          "id": "c00301",
+          "link_id": "p003",
+          "body": "Per user pricing is a ripoff for small teams. We cancelled after the second price hike.",
+          "author": "sample_user_13",
+          "score": 120
+        },
+        {
+          "id": "c00302",
+          "link_id": "p003",
+          "body": "Too expensive now. I hate that the cheaper plan was removed and the per user price doubled.",
+          "author": "sample_user_01",
+          "score": 54
+        },
+        {
+          "id": "c00303",
+          "link_id": "p003",
+          "body": "Hidden fees on card payments too, the pricing page never mentions them.",
+          "author": "sample_user_14",
+          "score": 22
+        },
+        {
+          "id": "c00304",
+          "link_id": "p003",
+          "body": "I am happy with the price honestly, it is great value for what we get.",
+          "author": "sample_user_15",
+          "score": 9
+        },
+        {
+          "id": "c00305",
+          "link_id": "p003",
+          "body": "Looking for an alternative because the plan is overpriced and every price increase lands mid contract.",
+          "author": "sample_user_03",
+          "score": 37
+        }
+      ]
+    },
+    "p004": {
+      "data": [
+        {
+          "id": "c00401",
+          "link_id": "p004",
+          "body": "Receipt scanning on the mobile app is useless, it crashes halfway through the upload.",
+          "author": "sample_user_17",
+          "score": 44
+        },
+        {
+          "id": "c00402",
+          "link_id": "p004",
+          "body": "The app crashed on me three times today while scanning receipts. I can't trust the mobile app at all.",
+          "author": "sample_user_05",
+          "score": 18
+        },
+        {
+          "id": "c00403",
+          "link_id": "p004",
+          "body": "Desktop works well for me, I just upload receipts at night.",
+          "author": "sample_user_18",
+          "score": 6
+        },
+        {
+          "id": "c00404",
+          "link_id": "p004",
+          "body": "Scanned receipts come out blurry and the mobile app still crashes on older phones.",
+          "author": "sample_user_08",
+          "score": 27
+        }
+      ]
+    },
+    "p005": {
+      "data": [
+        {
+          "id": "c00501",
+          "link_id": "p005",
+          "body": "Recurring invoices can't handle a mid month change, so I recreate the recurring series by hand each time.",
+          "author": "sample_user_20",
+          "score": 35
+        },
+        {
+          "id": "c00502",
+          "link_id": "p005",
+          "body": "The recurring invoice template doesn't support custom line items, which is annoying for retainer clients.",
+          "author": "sample_user_13",
+          "score": 21
+        },
+        {
+          "id": "c00503",
+          "link_id": "p005",
+          "body": "It is missing a pause button for recurring invoices, I had to delete the series for a client on break.",
+          "author": "sample_user_09",
+          "score": 11
+        },
+        {
+          "id": "c00504",
+          "link_id": "p005",
+          "body": "What billing cycle do you use?",
+          "author": "sample_user_21",
+          "score": 4
+        }
+      ]
+    },
+    "p006": {
+      "data": [
+        {
+          "id": "c00601",
+          "link_id": "p006",
+          "body": "Support never answers tickets in under a week. I am still waiting on a ticket from last month.",
+          "author": "sample_user_11",
+          "score": 29
+        },
+        {
+          "id": "c00602",
+          "link_id": "p006",
+          "body": "Got no response from support for two weeks, then the ticket was closed without a reply.",
+          "author": "sample_user_17",
+          "score": 16
+        },
+        {
+          "id": "c00603",
+          "link_id": "p006",
+          "body": "Chat support solved my issue in ten minutes, maybe it depends on the plan.",
+          "author": "sample_user_23",
+          "score": 7
+        },
+        {
+          "id": "c00604",
+          "link_id": "p006",
+          "body": "Support is useless for tax questions, every ticket gets the same help page link.",
+          "author": "sample_user_20",
+          "score": 13
+        }
+      ]
+    },
+    "p007": {
+      "data": [
+        {
+          "id": "c00701",
+          "link_id": "p007",
+          "body": "Price. They raised the price twice this year and per user pricing is too expensive for a small team.",
+          "author": "sample_user_25",
+          "score": 61
+        },
+        {
+          "id": "c00702",
+          "link_id": "p007",
+          "body": "Chasing late payments. I hate sending overdue payment reminders manually to every client.",
+          "author": "sample_user_26",
+          "score": 48
+        },
+        {
+          "id": "c00703",
+          "link_id": "p007",
+          "body": "The mobile app crashes whenever I scan receipts, so I stopped scanning receipts on the phone.",
+          "author": "sample_user_27",
+          "score": 26
+        },
+        {
+          "id": "c00704",
+          "link_id": "p007",
+          "body": "Support is useless, I am still waiting on a ticket about duplicate transactions from the bank sync.",
+          "author": "sample_user_28",
+          "score": 15
+        },
+        {
+          "id": "c00705",
+          "link_id": "p007",
+          "body": "Nothing really, it works well for my needs.",
+          "author": "sample_user_29",
+          "score": 10
+        }
+      ]
+    }
+  }
+}

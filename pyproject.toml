@@ -1,0 +1,9 @@
+[project]
+name = "reddit-pain-miner"
+version = "0.1.0"
+description = "Mine archived discussion threads for ranked customer pain points."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

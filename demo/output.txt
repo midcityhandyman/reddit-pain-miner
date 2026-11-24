@@ -1,0 +1,72 @@
+== reddit-pain-miner offline demo ==
+topic: invoicing software | source: fixtures/invoicing_software.json (synthetic) | network calls: 0
+
+-- strongest complaint statements and the rules that fired --
+ 8.25  [frustration, friction, unmet_need, first_person]
+       I wish there was a way to escalate overdue reminders after 30 days, chasing clients by hand is painful.
+ 7.06  [strong_negative, malfunction, first_person]
+       For me the bank sync fails about once a week and I am sick of reconnecting the bank feed.
+ 6.66  [strong_negative, friction, first_person]
+       I hate chasing late payments by hand every Friday.
+ 6.35  [strong_negative, friction, first_person]
+       I hate sending overdue payment reminders manually to every client.
+ 6.27  [frustration, malfunction]
+       Frustrating that a broken bank sync is treated as normal, the feed fails and nobody tells you.
+
+-- ranked report --
+# Pain point report: invoicing software
+
+- Threads scanned: 7
+- Complaint statements kept: 44
+- Clusters found: 13 (showing top 6)
+
+| Rank | Pain point | Score | Mentions | Threads | Authors |
+| --- | --- | --- | --- | --- | --- |
+| 1 | bank / sync / feed | 101.79 | 7 | 2 | 6 |
+| 2 | overdue / reminders / payment | 95.67 | 7 | 2 | 5 |
+| 3 | receipts / mobile / crashes | 66.05 | 7 | 2 | 5 |
+| 4 | price / raised / per | 64.83 | 6 | 2 | 5 |
+| 5 | recurring / invoices / series | 22.52 | 3 | 1 | 3 |
+| 6 | support / answer / nine | 22.28 | 4 | 1 | 3 |
+
+## 1. bank / sync / feed
+
+Signals: malfunction, first_person, intensifier
+
+- "For me the bank sync fails about once a week and I am sick of reconnecting the bank feed." (score 7.06, 133 upvotes, source p007)
+- "Frustrating that a broken bank sync is treated as normal, the feed fails and nobody tells you." (score 6.27, 33 upvotes, source c00205)
+
+## 2. overdue / reminders / payment
+
+Signals: first_person, friction, strong_negative
+
+- "I wish there was a way to escalate overdue reminders after 30 days, chasing clients by hand is painful." (score 8.25, 30 upvotes, source c00104)
+- "I hate chasing late payments by hand every Friday." (score 6.66, 212 upvotes, source p001)
+
+## 3. receipts / mobile / crashes
+
+Signals: malfunction, first_person, intensifier
+
+- "The mobile app crashes whenever I scan receipts, so I stopped scanning receipts on the phone." (score 4.22, 26 upvotes, source c00703)
+- "Mobile app crashes when I scan receipts." (score 4.00, 97 upvotes, source p004)
+
+## 4. price / raised / per
+
+Signals: cost, intensifier, first_person
+
+- "Looking for an alternative because the plan is overpriced and every price increase lands mid contract." (score 5.29, 37 upvotes, source c00305)
+- "I hate that the cheaper plan was removed and the per user price doubled." (score 4.37, 54 upvotes, source c00302)
+
+## 5. recurring / invoices / series
+
+Signals: first_person, limitation, friction
+
+- "Recurring invoices can't handle a mid month change, so I recreate the recurring series by hand each time." (score 5.28, 35 upvotes, source c00501)
+- "I wish recurring invoices let me adjust a single month." (score 3.44, 76 upvotes, source p005)
+
+## 6. support / answer / nine
+
+Signals: support
+
+- "Support took nine days to answer." (score 2.89, 58 upvotes, source p006)
+- "Support never answers tickets in under a week." (score 2.74, 29 upvotes, source c00601)
