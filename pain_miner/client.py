@@ -11,6 +11,7 @@ parsing code as the live one.
 """
 from __future__ import annotations
 
+import html
 import json
 import re
 import urllib.parse
@@ -48,6 +49,11 @@ def _int(value: Any) -> int:
         return 0
 
 
+def _text(value: Any) -> str:
+    """Archive payloads carry HTML-escaped text (&gt; quotes, &amp;, &#39;). Decode it."""
+    return html.unescape(str(value or ""))
+
+
 def parse_posts(payload: Any) -> list[Post]:
     posts = []
     for row in _rows(payload):
@@ -57,8 +63,8 @@ def parse_posts(payload: Any) -> list[Post]:
             Post(
                 id=str(row["id"]),
                 subreddit=str(row.get("subreddit", "")),
-                title=str(row.get("title", "")),
-                body=str(row.get("selftext") or row.get("body") or ""),
+                title=_text(row.get("title")),
+                body=_text(row.get("selftext") or row.get("body")),
                 author=str(row.get("author", "unknown")),
                 score=_int(row.get("score")),
                 created_utc=_int(row.get("created_utc")),
@@ -70,7 +76,7 @@ def parse_posts(payload: Any) -> list[Post]:
 def parse_comments(payload: Any, post_id: str) -> list[Comment]:
     comments = []
     for row in _rows(payload):
-        body = str(row.get("body") or "")
+        body = _text(row.get("body"))
         if not row.get("id") or body in ("", "[deleted]", "[removed]"):
             continue
         comments.append(

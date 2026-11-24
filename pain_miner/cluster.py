@@ -27,17 +27,27 @@ STOPWORDS = frozenset(
 Vector = dict[str, float]
 
 
+_ES_BASES = ("s", "x", "z", "ch", "sh")
+
+
 def stem(token: str) -> str:
+    """Crude suffix stripper. Plural and singular must land on the same stem."""
     for suffix, replacement in (("ies", "y"), ("ing", ""), ("ed", ""), ("es", ""), ("s", "")):
-        if token.endswith(suffix) and len(token) - len(suffix) >= 3:
-            return token[: len(token) - len(suffix)] + replacement
+        base = token[: len(token) - len(suffix)]
+        if not token.endswith(suffix) or len(base) < 3:
+            continue
+        if suffix == "es" and not base.endswith(_ES_BASES):
+            continue  # "invoices" is "invoice" + "s", not "invoic" + "es"
+        if suffix == "s" and base.endswith("s"):
+            continue  # leave "address", "less" alone
+        return base + replacement
     return token
 
 
 def tokenize(text: str) -> list[tuple[str, str]]:
     """Return (stem, surface form) pairs for the content words in text."""
     pairs = []
-    for word in re.findall(r"[a-z][a-z']+", text.lower()):
+    for word in re.findall(r"[a-z][a-z']+", text.lower().replace("’", "'")):
         if word in STOPWORDS or len(word) < 3:
             continue
         pairs.append((stem(word.replace("'", "")), word))
@@ -112,10 +122,13 @@ def cluster_statements(statements: list[Statement], similarity: float = 0.15) ->
             centroids.append(vector)
 
     # Reassignment pass: fixes early statements that fit a later cluster better.
+    # A statement that resembles nothing (similarity 0, for example all stopwords)
+    # stays where it was seeded instead of falling into the first cluster.
+    seeded = {index: group for group, indexes in enumerate(members) for index in indexes}
     reassigned: list[list[int]] = [[] for _ in centroids]
     for index, vector in enumerate(vectors):
-        best, _ = _nearest(vector, centroids)
-        reassigned[best].append(index)
+        best, sim = _nearest(vector, centroids)
+        reassigned[best if sim > 0.0 else seeded[index]].append(index)
 
     surface: dict[str, Counter[str]] = {}
     for pairs in token_pairs:

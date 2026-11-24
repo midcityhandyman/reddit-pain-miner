@@ -18,7 +18,7 @@ topic: invoicing software | source: fixtures/invoicing_software.json (synthetic)
 
 - Threads scanned: 7
 - Complaint statements kept: 44
-- Clusters found: 13 (showing top 6)
+- Clusters found: 12 (showing top 6)
 
 | Rank | Pain point | Score | Mentions | Threads | Authors |
 | --- | --- | --- | --- | --- | --- |
@@ -26,7 +26,7 @@ topic: invoicing software | source: fixtures/invoicing_software.json (synthetic)
 | 2 | overdue / reminders / payment | 95.67 | 7 | 2 | 5 |
 | 3 | receipts / mobile / crashes | 66.05 | 7 | 2 | 5 |
 | 4 | price / raised / per | 64.83 | 6 | 2 | 5 |
-| 5 | recurring / invoices / series | 22.52 | 3 | 1 | 3 |
+| 5 | recurring / invoices / series | 38.15 | 4 | 1 | 4 |
 | 6 | support / answer / nine | 22.28 | 4 | 1 | 3 |
 
 ## 1. bank / sync / feed
@@ -62,7 +62,7 @@ Signals: cost, intensifier, first_person
 Signals: first_person, limitation, friction
 
 - "Recurring invoices can't handle a mid month change, so I recreate the recurring series by hand each time." (score 5.28, 35 upvotes, source c00501)
-- "I wish recurring invoices let me adjust a single month." (score 3.44, 76 upvotes, source p005)
+- "The recurring invoice template doesn't support custom line items, which is annoying for retainer clients." (score 5.17, 21 upvotes, source c00502)
 
 ## 6. support / answer / nine
 

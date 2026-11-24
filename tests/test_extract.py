@@ -58,3 +58,10 @@ def test_min_score_threshold_filters():
     thread = make_thread("The report is missing a totals row for now.")
     assert len(extract_statements([thread], min_score=1.0)) == 1
     assert extract_statements([thread], min_score=5.0) == []
+
+
+def test_typographic_apostrophes_match_the_same_rules():
+    straight = score_sentence("The export doesn't work on my phone")
+    curly = score_sentence("The export doesn\u2019t work on my phone")
+    assert curly == straight and "malfunction" in curly[1]
+    assert split_sentences("It can\u2019t export.") == ["It can't export."]

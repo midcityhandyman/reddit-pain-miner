@@ -45,3 +45,25 @@ def test_clustering_is_deterministic_and_handles_empty():
     first = [(c.label, c.mentions) for c in cluster_statements(statements)]
     assert first == [(c.label, c.mentions) for c in cluster_statements(statements)]
     assert cluster_statements([]) == []
+
+
+def test_stem_keeps_singular_and_plural_together():
+    for singular, plural in (("invoice", "invoices"), ("price", "prices"), ("fee", "fees"),
+                             ("crash", "crashes"), ("box", "boxes"), ("reminder", "reminders")):
+        assert stem(singular) == stem(plural), (singular, plural)
+    assert stem("address") == "address"
+
+
+def test_tokenize_handles_typographic_apostrophe():
+    assert [s for s, _ in tokenize("It doesn\u2019t sync")] == ["sync"]
+
+
+def test_statement_with_no_content_words_does_not_join_the_top_cluster():
+    statements = [
+        st("The bank sync fails every week", score=6.0, author="sample_user_01"),
+        st("Bank sync is broken and the bank feed fails", score=5.0, author="sample_user_02"),
+        st("I can't do this any more", score=2.5, author="sample_user_03", source="empty"),
+    ]
+    clusters = cluster_statements(statements)
+    assert [c.mentions for c in clusters] == [2, 1]
+    assert clusters[0].author_count == 2 and clusters[1].label == "misc"

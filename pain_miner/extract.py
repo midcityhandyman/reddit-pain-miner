@@ -47,6 +47,14 @@ SHOUTING = re.compile(r"\b[A-Z]{4,}\b|!!")
 POSITIVE = re.compile(
     r"\b(love|great|awesome|works (well|fine|perfectly)|happy with|recommend|solved|no complaints)\b", _F)
 
+_APOSTROPHES = str.maketrans({"’": "'", "‘": "'", "ʼ": "'", "“": '"', "”": '"'})
+
+
+def normalize_quotes(text: str) -> str:
+    """Map typographic quotes to ASCII so rules like can't and doesn't work still match."""
+    return text.translate(_APOSTROPHES)
+
+
 _SENTENCE_SPLIT = re.compile(r"(?<=[.!?])\s+|\n+")
 MIN_WORDS = 4
 DEFAULT_MIN_SCORE = 2.5
@@ -54,13 +62,14 @@ DEFAULT_MIN_SCORE = 2.5
 
 def split_sentences(text: str) -> list[str]:
     """Split text into sentences, dropping quoted lines (markdown '>' prefix)."""
-    kept_lines = [ln for ln in text.splitlines() if not ln.lstrip().startswith(">")]
+    kept_lines = [ln for ln in normalize_quotes(text).splitlines() if not ln.lstrip().startswith(">")]
     parts = _SENTENCE_SPLIT.split("\n".join(kept_lines))
     return [re.sub(r"\s+", " ", p).strip() for p in parts if p and p.strip()]
 
 
 def score_sentence(sentence: str, upvotes: int = 0) -> tuple[float, tuple[str, ...]]:
     """Return (score, rule names). Score is 0.0 when no complaint rule fires."""
+    sentence = normalize_quotes(sentence)
     if len(sentence.split()) < MIN_WORDS:
         return 0.0, ()
     score = 0.0

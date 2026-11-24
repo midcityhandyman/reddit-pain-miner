@@ -66,3 +66,10 @@ def test_http_client_wraps_failures():
         HttpArchiveClient("https://archive.example.com", opener=broken).search_posts("x")
     with pytest.raises(ArchiveError):
         HttpArchiveClient("ftp://archive.example.com")
+
+
+def test_parsers_decode_html_entities():
+    posts = parse_posts({"data": [{"id": "a", "title": "Fees &amp; limits", "selftext": "It can&#39;t export"}]})
+    assert posts[0].title == "Fees & limits" and posts[0].body == "It can't export"
+    comments = parse_comments({"data": [{"id": "c1", "body": "&gt; quoted line\nMy reply"}]}, "a")
+    assert comments[0].body == "> quoted line\nMy reply"
